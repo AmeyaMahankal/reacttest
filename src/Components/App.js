@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import '../Styles/App.css';
 import PokeList from './PokList';
 import { Link } from "react-router-dom"
 
@@ -9,16 +9,17 @@ function Right({ selectedPokemon }) {
       <div className="centered">
         <h2>Pokemon</h2>
         {selectedPokemon && (
-          <div>
+          <div className="pokemon-details">
             <h3>#{selectedPokemon.id}-{selectedPokemon.name}</h3>
             <img src={selectedPokemon.image} alt={selectedPokemon.name} />
-            <h1>Height:{selectedPokemon.height}</h1>
-            <h1>Weight:{selectedPokemon.weight}</h1>
-            <h1>Health:{selectedPokemon.hp}</h1>
-            <h1>Attack:{selectedPokemon.attack}</h1>
-            <h1>Defense:{selectedPokemon.defense}</h1>
-            <h1>Speed:{selectedPokemon.speed}</h1>
-            <h1>Type1{selectedPokemon.type1}</h1>
+            <h1 className="pokemon-stat">Type:{selectedPokemon.type1}</h1>
+            <h1 className="pokemon-stat">Height:{selectedPokemon.height} Decimetres</h1>
+            <h1 className="pokemon-stat">Weight:{selectedPokemon.weight} Decagrams</h1>
+            <h1 className="pokemon-stat">Health:{selectedPokemon.hp}</h1>
+            <h1 className="pokemon-stat">Attack:{selectedPokemon.attack}</h1>
+            <h1 className="pokemon-stat">Defense:{selectedPokemon.defense}</h1>
+            <h1 className="pokemon-stat">Speed:{selectedPokemon.speed}</h1>
+
 
           </div>
         )}
@@ -52,13 +53,15 @@ function App() {
           <Right selectedPokemon={selectedPokemon} />
         </div>
 
-        <div className="circle-container">
-          <div className="circleO">
-            <div>
-              <Link to="/about">About</Link>
+        <Link to="/about">
+          <div className="circle-container">
+            <div className="circleO">
+              <div>
+
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </>
   );
