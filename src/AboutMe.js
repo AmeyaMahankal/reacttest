@@ -1,3 +1,3 @@
 export default function AboutMe() {
-    return <h1>About</h1>
+    return <div><h1>About</h1><p>Created with React and PokeAPI</p></div>
 }
