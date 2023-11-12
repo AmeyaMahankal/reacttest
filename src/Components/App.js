@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import '../Styles/App.css';
 import PokeList from './PokList';
 import { Link } from "react-router-dom"
 
